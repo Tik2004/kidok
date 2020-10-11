@@ -1,0 +1,104 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
+
+* {
+    padding: 0px;
+    margin: 0px;
+    font-family: 'Open Sans', sans-serif;
+}
+
+.prize {
+    height: calc(120vh + 15rem);
+    background-color: rgb(48,49,49);
+    width: 100%;
+    /* padding:10px; */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#congrats {
+    font-size: 3rem;
+    color: white;
+    animation: glow-text 1s infinite alternate forwards;
+}
+
+.item {
+    display: flex;
+    flex-wrap: wrap;
+    width: 70%;
+    justify-content: space-between;
+}
+
+#prize-image {
+    max-width: 70vh; 
+    display:block; 
+    height: auto;
+    border: 3px solid rgb(48,49,49);
+    margin: 10px;
+    background: white;
+    border-radius: 50px;
+    animation: glow-box 2s infinite alternate forwards;
+    margin-top: 4rem;
+}
+
+.description {
+    margin-top: 2rem;
+    max-width: 16rem;
+    padding: 2rem;
+    /*
+    border-radius: 40px;
+    background: #303a44;
+    box-shadow:  -21px -21px 62px #232a32, 
+        21px 21px 62px #3d4a56;
+    */
+    display: flex;
+    align-items: center;
+    max-height: 35rem;
+    border-radius: 40px;
+    background: #ff6600;
+    box-shadow:  21px 21px 62px #ba4a00, 
+        -21px -21px 62px #ff8200;
+    color: white;
+    font-size:1.8rem;
+}
+
+#visa-image {
+    max-width: 600px;
+    margin: 0 auto;
+    display: block;
+}
+
+.get-prize {
+    max-width: 70%;
+    margin: 0 auto;
+}
+
+@media only screen and (max-width:800px) {
+    #prize-image {
+        max-width: 95%; 
+        display:block; 
+        height: auto;
+    }
+}
+
+@keyframes glow-text {
+    0% {
+        text-shadow: 0px 0px 10px #AF5FCE;
+    }
+
+    100% {
+        text-shadow: 0px 0px 10px #AF5FCE, 0px 0px 10px #AF5FCE, 0px 0px 10px #AF5FCE, 0px 0px 10px #AF5FCE, 0px 0px 10px #AF5FCE, 0px 0px 10px #AF5FCE;
+    }
+}
+
+@keyframes glow-box {
+    0% {
+        box-shadow:  1px 1px 6px #35292d, 
+        -1px -1px 6px #614b51;
+    }
+
+    100% {
+        box-shadow:  21px 21px 62px #372a2e, 
+                -21px -21px 62px #5f4a50;
+    }   
+}
